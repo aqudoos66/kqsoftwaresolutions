@@ -1,0 +1,491 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team | KQ Software Solutions | AI Developers, Researchers &amp; Creatives</title>
+  <meta name="description"
+    content="Meet the KQ Software Solutions team: founders, AI developers, full-stack developers, research writers, video editors, and marketing experts." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kqsoftwaresolution.vercel.app/team/" />
+  <link rel="icon" href="../assets/images/favicon.ico" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/pages.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    .founders-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .founder-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .founder-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+
+    .founder-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      border-color: var(--gold);
+    }
+
+    .founder-avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 1.2rem;
+      border: 3px solid var(--gold);
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--navy-light), var(--navy));
+    }
+
+    .founder-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .founder-avatar-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--gold);
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, var(--navy-light), var(--navy));
+    }
+
+    .founder-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+
+    .founder-role {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 1rem;
+    }
+
+    .founder-bio {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+
+    .founder-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .founder-skill-tag {
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .founder-links {
+      display: flex;
+      justify-content: center;
+      gap: 0.7rem;
+    }
+
+    .founder-link {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .founder-link:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .team-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .team-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .team-avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 0.85rem;
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--navy-light), #0d2545);
+    }
+
+    .team-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .team-avatar-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--gold);
+      background: linear-gradient(135deg, var(--navy-light), #0d2545);
+    }
+
+    .team-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+
+    .team-role {
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.7rem;
+    }
+
+    .team-skill-tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+      font-size: 0.65rem;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin: 2px;
+      border: 1px solid var(--border);
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0 0;
+    }
+
+    .founder-img-fallback {
+      background: linear-gradient(135deg, var(--navy-light), var(--navy));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--gold);
+      font-family: 'Outfit', sans-serif;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+    .team-tags-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+      }
+
+      .team-card {
+        padding: 1rem 0.8rem;
+      }
+
+      .team-avatar {
+        width: 55px;
+        height: 55px;
+      }
+
+      .team-name {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar" id="mainNav">
+    <a href="../index.html" class="logo"><img src="../assets/images/kq-logo.webp" alt="KQ Software Solutions"
+        class="logo-img" width="60" height="60" /></a>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li class="nav-dropdown">
+        <a href="../index.html#services">Services <i class="fas fa-caret-down"></i></a>
+        <div class="nav-dropdown-menu">
+          <a href="../services/software-development.html" class="nav-dropdown-item">Software Development</a>
+          <a href="../services/web-development.html" class="nav-dropdown-item">Web Development</a>
+          <a href="../services/mobile-app-development.html" class="nav-dropdown-item">Mobile Apps</a>
+          <a href="../services/ai-development.html" class="nav-dropdown-item">AI &amp; Agentic AI</a>
+          <a href="../services/research-writing.html" class="nav-dropdown-item">Research Writing</a>
+          <a href="../services/fyp-projects.html" class="nav-dropdown-item">FYP &amp; Projects</a>
+          <a href="../services/ecommerce.html" class="nav-dropdown-item">E-Commerce</a>
+          <a href="../services/graphic-design.html" class="nav-dropdown-item">UI/UX &amp; Design</a>
+          <a href="../services/digital-marketing.html" class="nav-dropdown-item">Digital Marketing</a>
+          <a href="../services/cloud-hosting.html" class="nav-dropdown-item">Cloud &amp; Hosting</a>
+        </div>
+      </li>
+      <li><a href="../team/index.html" class="active">Team</a></li>
+      <li><a href="../portfolio/index.html">Portfolio</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../contact.html" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <div class="breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep">&rsaquo;</span><span
+          class="breadcrumb-current">Our Team</span></div>
+      <h1>Meet the <span class="gold-text">KQ Team</span></h1>
+      <p>The talented professionals behind every project &mdash; developers, researchers, designers, and marketers
+        working together to deliver excellence.</p>
+    </div>
+  </section>
+
+  <!-- Founders -->
+  <section class="section" id="founders">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">Leadership</div>
+        <h2 class="section-title">Our <span class="gold-text">Founders</span></h2>
+        <div class="gold-rule"></div>
+        <p class="section-desc">KQ Software Solutions was co-founded by two passionate developers with a shared vision
+          &mdash; to deliver world-class software and research services from Pakistan to the world.</p>
+      </div>
+      <div class="founders-grid">
+        <div class="founder-card reveal-left">
+          <div class="founder-avatar">
+            <img src="../assets/images/abdul-khaliq-founder.webp" alt="Abdul Khaliq Bhatti - Founder"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'founder-img-fallback\'>AK</div>'" />
+          </div>
+          <div class="founder-name">Abdul Khaliq Bhatti</div>
+          <div class="founder-role">Founder &amp; Senior Developer</div>
+          <p class="founder-bio">Leading development with deep expertise in PHP, web architecture, and academic
+            research. Passionate about building scalable solutions and original research content.</p>
+          <div class="founder-skills">
+            <span class="founder-skill-tag">PHP &amp; Laravel</span>
+            <span class="founder-skill-tag">Agentic AI</span>
+            <span class="founder-skill-tag">Research Writing</span>
+            <span class="founder-skill-tag">Web Architecture</span>
+            <span class="founder-skill-tag">React</span>
+          </div>
+          <div class="founder-links">
+            <a href="mailto:kqsoftwaresolutions@gmail.com" class="founder-link" title="Email"><i
+                class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/923053956628" class="founder-link" title="WhatsApp"><i
+                class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="founder-card reveal-right">
+          <div class="founder-avatar">
+            <img src="../assets/images/abdul-qudoos-cofounder.webp" alt="Abdul Qudoos Mastoi - Co-Founder"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'founder-img-fallback\'>AQ</div>'" />
+          </div>
+          <div class="founder-name">Abdul Qudoos Mastoi</div>
+          <div class="founder-role">Co-Founder &amp; Senior Developer</div>
+          <p class="founder-bio">Co-founder driving innovation in Laravel development and academic research. Expert in
+            backend systems and delivering plagiarism-free research papers.</p>
+          <div class="founder-skills">
+            <span class="founder-skill-tag">Laravel</span>
+            <span class="founder-skill-tag">Research Writing</span>
+            <span class="founder-skill-tag">Data Analysis (SPSS)</span>
+            <span class="founder-skill-tag">Academic Editing</span>
+            <span class="founder-skill-tag">FYP Projects</span>
+          </div>
+          <div class="founder-links">
+            <a href="mailto:kqsoftwaresolutions@gmail.com" class="founder-link" title="Email"><i
+                class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/923053956628" class="founder-link" title="WhatsApp"><i
+                class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Members -->
+  <section class="section" id="team" style="padding-top:0.5rem;">
+    <div class="container">
+      <hr class="section-divider" />
+      <div class="reveal" style="margin-top:3.5rem;">
+        <div class="section-eyebrow">The Crew</div>
+        <h2 class="section-title">Our <span class="gold-text">Team Members</span></h2>
+        <div class="gold-rule"></div>
+        <p class="section-desc">Meet the talented professionals who bring your ideas to life.</p>
+      </div>
+      <div class="team-grid">
+
+        <!-- Muhammad Mubashir - Senior Video Editor & Social Media Expert -->
+        <div class="team-card reveal-scale">
+          <div class="team-avatar">
+            <img src="../assets/images/team/muhammad-mubashir-creative.webp" alt="Muhammad Mubashir"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'team-avatar-placeholder\'><i class=\'fas fa-video\'></i></div>'" />
+          </div>
+          <div class="team-name">Muhammad Mubashir</div>
+          <div class="team-role">Video Editor &amp; Social Media Expert</div>
+          <div class="team-tags-wrapper">
+            <span class="team-skill-tag">Video Editing</span>
+            <span class="team-skill-tag">Social Media</span>
+            <span class="team-skill-tag">Content Strategy</span>
+          </div>
+        </div>
+
+        <!-- Muhammad Furqan - Marketing Expert & Creative Team -->
+        <div class="team-card reveal-scale">
+          <div class="team-avatar">
+            <img src="../assets/images/muhammad-furqan-marketing.webp" alt="Muhammad Furqan"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'team-avatar-placeholder\'><i class=\'fas fa-bullhorn\'></i></div>'" />
+          </div>
+          <div class="team-name">Muhammad Furqan</div>
+          <div class="team-role">Marketing Expert &amp; Creative</div>
+          <div class="team-tags-wrapper">
+            <span class="team-skill-tag">Marketing</span>
+            <span class="team-skill-tag">Content Strategy</span>
+            <span class="team-skill-tag">Branding</span>
+          </div>
+        </div>
+
+        <!-- Hasnain Raheem - Full-Stack Developer & Sales Expert -->
+        <div class="team-card reveal-scale">
+          <div class="team-avatar">
+            <img src="../assets/images/hasnain-raheem-fullstack.webp" alt="Hasnain Raheem"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'team-avatar-placeholder\'><i class=\'fas fa-code\'></i></div>'" />
+          </div>
+          <div class="team-name">Hasnain Raheem</div>
+          <div class="team-role">Full-Stack Developer &amp; Sales</div>
+          <div class="team-tags-wrapper">
+            <span class="team-skill-tag">Web Development</span>
+            <span class="team-skill-tag">Front-End</span>
+            <span class="team-skill-tag">Back-End</span>
+            <span class="team-skill-tag">Data Analytics</span>
+            <span class="team-skill-tag">Sales</span>
+          </div>
+        </div>
+
+        <!-- Rao Shoab - AI Developer & Agentic AI Expert -->
+        <div class="team-card reveal-scale">
+          <div class="team-avatar">
+            <img src="../assets/images/rao-shoab-ai-developer.webp" alt="Rao Shoab"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'team-avatar-placeholder\'><i class=\'fas fa-robot\'></i></div>'" />
+          </div>
+          <div class="team-name">Rao Shoab</div>
+          <div class="team-role">AI Developer &amp; Agentic AI Expert</div>
+          <div class="team-tags-wrapper">
+            <span class="team-skill-tag">AI Development</span>
+            <span class="team-skill-tag">Agentic AI</span>
+            <span class="team-skill-tag">Machine Learning</span>
+            <span class="team-skill-tag">Python</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Want to Work With <span style="color:var(--gold-light)">Our Team?</span></h2>
+        <p>We take on exciting projects across software, AI, research, and design. Let&rsquo;s build something great
+          together.</p>
+        <a href="../contact.html" class="btn btn-primary">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 <a href="../index.html">KQ Software Solutions</a>. All rights reserved. | <a
+        href="mailto:kqsoftwaresolutions@gmail.com">kqsoftwaresolutions@gmail.com</a></p>
+  </footer>
+  <script src="../assets/js/script.js?v=2" defer></script>
+</body>
+
+</html>

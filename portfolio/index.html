@@ -1,0 +1,141 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | KQ Software Solutions</title>
+  <link rel="icon" href="../assets/images/favicon.ico" />
+  <link rel="stylesheet" href="../assets/css/pages.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+<nav class="navbar" id="mainNav">
+  <a href="../index.html" class="logo"><img src="../assets/images/kq-logo.webp" alt="KQ Software Solutions" class="logo-img" width="60" height="60" /></a>
+  <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li class="nav-dropdown">
+      <a href="../index.html#services">Services <i class="fas fa-caret-down"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="../services/software-development.html" class="nav-dropdown-item">Software Development</a>
+        <a href="../services/web-development.html" class="nav-dropdown-item">Web Development</a>
+        <a href="../services/mobile-app-development.html" class="nav-dropdown-item">Mobile Apps</a>
+        <a href="../services/ai-development.html" class="nav-dropdown-item">AI &amp; Agentic AI</a>
+        <a href="../services/research-writing.html" class="nav-dropdown-item">Research Writing</a>
+        <a href="../services/fyp-projects.html" class="nav-dropdown-item">FYP &amp; Projects</a>
+        <a href="../services/ecommerce.html" class="nav-dropdown-item">E-Commerce</a>
+        <a href="../services/graphic-design.html" class="nav-dropdown-item">UI/UX &amp; Design</a>
+        <a href="../services/digital-marketing.html" class="nav-dropdown-item">Digital Marketing</a>
+        <a href="../services/cloud-hosting.html" class="nav-dropdown-item">Cloud &amp; Hosting</a>
+      </div>
+    </li>
+    <li><a href="../team/index.html">Team</a></li>
+    <li><a href="../portfolio/index.html">Portfolio</a></li>
+    <li><a href="../blog/index.html">Blog</a></li>
+    <li><a href="../contact.html" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep">�</span><span class="breadcrumb-current">Portfolio</span></div>
+    <h1>Our <span class="gold-text">Portfolio</span></h1>
+    <p>Explore some of our recently completed projects across software development, AI, and UI/UX design.</p>
+  </div>
+</section>
+
+
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="reveal visible">
+        <div class="section-eyebrow">Our Work</div>
+        <h2 class="section-title">
+          Academic <span class="gold-text">Portfolio</span>
+        </h2>
+        <div class="gold-rule"></div>
+        <p class="section-desc">
+          We have authored thesis and research papers for prestigious
+          institutions at undergraduate, postgraduate, MS, and PhD levels.
+        </p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <div class="portfolio-institution">Quest University Nawabshah</div>
+          <div class="portfolio-loc">Quaid-e-Awam University — Pakistan</div>
+          <ul class="portfolio-list">
+            <li>Undergraduate (BS) Thesis &amp; Research Papers</li>
+            <li>Postgraduate (MS) Thesis &amp; Dissertations</li>
+            <li>PhD Research Papers &amp; Proposals</li>
+            <li>Multiple Disciplines &amp; Departments</li>
+          </ul>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-institution">Dublin School of Business</div>
+          <div class="portfolio-loc">Dublin, Ireland</div>
+          <ul class="portfolio-list">
+            <li>MBA &amp; Business Thesis Writing</li>
+            <li>Harvard Style Referencing</li>
+            <li>IORE Style Academic Papers</li>
+            <li>Professional Business Research</li>
+          </ul>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-institution">SBBU University</div>
+          <div class="portfolio-loc">
+            Shaheed Benazir Bhutto University — Pakistan
+          </div>
+          <ul class="portfolio-list">
+            <li>BS &amp; MS Thesis Writing</li>
+            <li>Research Papers &amp; Assignments</li>
+            <li>Original Human-Written Content</li>
+            <li>Zero AI &amp; Zero Plagiarism</li>
+          </ul>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-institution">Web &amp; App Projects</div>
+          <div class="portfolio-loc">Delivered Worldwide</div>
+          <ul class="portfolio-list">
+            <li>Business Websites &amp; Landing Pages</li>
+            <li>E-Commerce Platforms</li>
+            <li>Android &amp; iOS Applications</li>
+            <li>PHP Backend Systems &amp; APIs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+<footer class="footer"><p>� 2025 <a href="../index.html">KQ Software Solutions</a>. All rights reserved. | <a href="mailto:kqsoftwaresolutions@gmail.com">kqsoftwaresolutions@gmail.com</a></p></footer>
+<script>
+  // Simple portfolio filter script
+  document.addEventListener('DOMContentLoaded', () => {
+    const filters = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.portfolio-card');
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(f => f.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        items.forEach(item => {
+          if(filter === 'all' || item.dataset.category === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+  <script src="../assets/js/script.js?v=2" defer></script>
+</body></html>
+
+
+
+
+
