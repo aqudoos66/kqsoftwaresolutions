@@ -2373,3 +2373,292 @@ a {
   .nav-dropdown.mobile-open .nav-dropdown-menu { opacity: 1; pointer-events: auto; display: grid; }
   .footer-content { align-items: start; }
 }
+
+
+/* Leadership / Founder Section */
+.leadership-section {
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(5rem, 9vw, 8rem);
+  padding-bottom: clamp(5rem, 8vw, 7rem);
+  background: #050505;
+  color: #fff;
+}
+
+.leadership-section::before {
+  content: "";
+  position: absolute;
+  width: 560px;
+  height: 560px;
+  top: -280px;
+  left: -260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.08), transparent 68%);
+  pointer-events: none;
+}
+
+.leadership-container {
+  position: relative;
+  z-index: 1;
+}
+
+.leadership-topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.leadership-title-wrap .section-eyebrow {
+  margin-bottom: 0.6rem;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.leadership-main-title {
+  margin: 0;
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.65rem, 5vw, 5rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.leadership-main-title span {
+  color: var(--gold-light);
+}
+
+.leadership-controls {
+  display: flex;
+  gap: 0.8rem;
+  padding-top: 0.2rem;
+}
+
+.leadership-arrow {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(201, 162, 39, 0.75);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--gold-light);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.leadership-arrow:hover {
+  background: var(--gold-light);
+  color: #050505;
+  transform: translateY(-2px);
+}
+
+.leadership-arrow:disabled {
+  opacity: 0.32;
+  cursor: default;
+  transform: none;
+}
+
+.leadership-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.leadership-track {
+  display: flex;
+  gap: clamp(2rem, 5vw, 5.5rem);
+  width: max-content;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.leadership-person {
+  flex: 0 0 min(44vw, 620px);
+  width: min(44vw, 620px);
+  min-width: 0;
+}
+
+.leadership-person-visual {
+  position: relative;
+  height: clamp(390px, 43vw, 590px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+.leadership-person-visual::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+}
+
+.leadership-person-visual img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  object-fit: contain;
+  object-position: center bottom;
+  transition: transform 0.65s ease;
+}
+
+.leadership-person:hover .leadership-person-visual img {
+  transform: scale(1.025);
+}
+
+.leadership-person-glow {
+  position: absolute;
+  z-index: 0;
+  width: 58%;
+  aspect-ratio: 1;
+  top: 12%;
+  left: 21%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.11), transparent 68%);
+  filter: blur(10px);
+}
+
+.leadership-person-info {
+  position: relative;
+  padding: 1.25rem 0.2rem 0;
+}
+
+.leadership-person-info h3 {
+  margin: 0 0 0.45rem;
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(1.7rem, 2.65vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.leadership-person-info h3 span {
+  color: var(--gold-light);
+}
+
+.leadership-person-info p {
+  margin: 0;
+  color: rgba(255,255,255,0.72);
+  font-size: clamp(0.9rem, 1.2vw, 1.08rem);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.leadership-linkedin {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  margin-top: 0.8rem;
+  border-radius: 4px;
+  background: #fff;
+  color: #050505;
+  font-size: 0.95rem;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.leadership-linkedin:hover {
+  background: var(--gold-light);
+  color: #050505;
+  transform: translateY(-2px);
+}
+
+.leadership-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 3.5rem;
+}
+
+.leadership-bottom-line {
+  width: 36px;
+  height: 1px;
+  background: var(--gold-light);
+}
+
+.leadership-bottom a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.leadership-bottom a:hover {
+  color: var(--gold-light);
+  gap: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .leadership-person {
+    flex-basis: 70vw;
+    width: 70vw;
+  }
+
+  .leadership-person-visual {
+    height: 470px;
+  }
+}
+
+@media (max-width: 620px) {
+  .leadership-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .leadership-topbar {
+    align-items: flex-end;
+    margin-bottom: 2.2rem;
+  }
+
+  .leadership-main-title {
+    font-size: clamp(2.35rem, 12vw, 3.5rem);
+  }
+
+  .leadership-controls {
+    gap: 0.45rem;
+  }
+
+  .leadership-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 0.8rem;
+  }
+
+  .leadership-person {
+    flex-basis: 84vw;
+    width: 84vw;
+  }
+
+  .leadership-person-visual {
+    height: 360px;
+  }
+
+  .leadership-person-info {
+    padding-top: 1rem;
+  }
+
+  .leadership-person-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .leadership-bottom {
+    margin-top: 2.5rem;
+  }
+}
