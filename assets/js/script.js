@@ -152,16 +152,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.getElementById("navLinks");
 
   if (navToggle && navLinks) {
+    navToggle.setAttribute("aria-expanded", "false");
     navToggle.addEventListener("click", function () {
-      this.classList.toggle("active");
-      navLinks.classList.toggle("active");
+      const isOpen = navLinks.classList.toggle("active");
+      this.classList.toggle("active", isOpen);
+      this.setAttribute("aria-expanded", String(isOpen));
+      document.body.classList.toggle("menu-open", isOpen);
     });
 
-    navLinks.querySelectorAll("a").forEach(function (link) {
+    document.querySelectorAll(".nav-dropdown > a").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          this.parentElement.classList.toggle("mobile-open");
+        }
+      });
+    });
+
+    navLinks.querySelectorAll("a:not(.nav-dropdown > a)").forEach(function (link) {
       link.addEventListener("click", function () {
         navToggle.classList.remove("active");
         navLinks.classList.remove("active");
+        document.body.classList.remove("menu-open");
+        navToggle.setAttribute("aria-expanded", "false");
       });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (window.innerWidth <= 900 && navLinks.classList.contains("active") && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+        navToggle.classList.remove("active");
+        navLinks.classList.remove("active");
+        document.body.classList.remove("menu-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
     });
   }
 
@@ -219,28 +242,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ─── Budget IP Fetching ───
+  // ─── Budget selector ───
+  // Keep the form fast and privacy-friendly by avoiding a client-side IP lookup.
   const budgetSelect = document.getElementById("budgetSelect");
   if (budgetSelect) {
-    fetch('https://ipwho.is/')
-      .then(function(res) { return res.json(); })
-      .then(function(data) {
-        const currency = (data && data.success && data.currency && data.currency.code) ? data.currency.code : "USD";
-        budgetSelect.innerHTML = 
-          '<option value="">Select your budget (' + currency + ')</option>' +
-          '<option value="Less than 100">Less than 100 ' + currency + '</option>' +
-          '<option value="100-500">100 - 500 ' + currency + '</option>' +
-          '<option value="500-1000">500 - 1000 ' + currency + '</option>' +
-          '<option value="1000+">1000+ ' + currency + '</option>';
-      })
-      .catch(function(err) {
-        budgetSelect.innerHTML = 
-          '<option value="">Select your budget (USD)</option>' +
-          '<option value="Less than 100">Less than 100 USD</option>' +
-          '<option value="100-500">100 - 500 USD</option>' +
-          '<option value="500-1000">500 - 1000 USD</option>' +
-          '<option value="1000+">1000+ USD</option>';
-      });
+    budgetSelect.innerHTML =
+      '<option value="">Select your budget (USD)</option>' +
+      '<option value="Less than 100">Less than 100 USD</option>' +
+      '<option value="100-500">100 - 500 USD</option>' +
+      '<option value="500-1000">500 - 1000 USD</option>' +
+      '<option value="1000+">1000+ USD</option>';
   }
 
   // ─── Contact form ───

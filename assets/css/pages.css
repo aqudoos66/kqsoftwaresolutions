@@ -501,16 +501,9 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ── Footer ──────────────────────────────── */
-.footer {
-  background: var(--navy);
-  color: rgba(255,255,255,0.55);
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.8rem;
-}
-
-.footer a { color: var(--gold-light); }
-.footer a:hover { text-decoration: underline; }
+/* Footer styling is defined globally in style.css so every page uses the same
+   homepage footer appearance. Keep this file from overriding its colors,
+   alignment, spacing, or hover behavior. */
 
 /* ── Responsive ──────────────────────────── */
 @media (max-width: 768px) {
@@ -546,3 +539,7 @@ a { text-decoration: none; color: inherit; }
   .sub-services-grid { grid-template-columns: 1fr; }
   .section { padding: 60px 5%; }
 }
+
+
+/* Shared dropdown is finalized in style.css / responsive.css. */
+.nav-dropdown-menu { grid-template-columns: 1fr; }

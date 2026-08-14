@@ -2121,7 +2121,7 @@ a {
     left: 10%;
     right: 10%;
     height: 2px;
-    background: dashed 2px var(--gold-border);
+    border-top: 2px dashed var(--gold-border); background: none;
     z-index: 0;
   }
 }
@@ -2261,4 +2261,115 @@ a {
 
 .nav-dropdown-icon i {
   color: var(--gold);
+}
+
+
+/* === Final UI polish / local icon rendering === */
+@font-face {
+  font-family: "FontAwesomeLocal";
+  src: url("../fonts/fontawesome-webfont.ttf") format("truetype");
+  font-display: swap;
+}
+.fas, .far, .fab {
+  font-family: "FontAwesomeLocal" !important;
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  line-height: 1;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.fa-caret-down::before { content: "\f0d7"; }
+.fa-arrow-right::before { content: "\f061"; }
+.fa-calendar::before { content: "\f073"; }
+.fa-clock::before { content: "\f017"; }
+.fa-code::before { content: "\f121"; }
+.fa-times::before { content: "\f00d"; }
+.fa-star::before { content: "\f005"; }
+.fa-phone::before { content: "\f095"; }
+.fa-paper-plane::before { content: "\f1d8"; }
+.fa-paint-brush::before { content: "\f1fc"; }
+.fa-map-marker-alt::before { content: "\f041"; }
+.fa-envelope::before { content: "\f0e0"; }
+.fa-comments::before { content: "\f086"; }
+.fa-cloud::before { content: "\f0c2"; }
+.fa-check-double::before { content: "\f00c"; }
+.fa-pencil-ruler::before { content: "\f040"; }
+.fa-pen-fancy::before { content: "\f040"; }
+.fa-bullhorn::before { content: "\f0a1"; }
+.fa-video::before { content: "\f03d"; }
+.fa-mobile-alt::before { content: "\f10b"; }
+.fa-building::before { content: "\f1ad"; }
+.fa-industry::before { content: "\f275"; }
+.fa-handshake::before { content: "\f2b5"; }
+.fa-shopping-bag::before { content: "\f290"; }
+.fa-bolt::before { content: "\f0e7"; }
+.fa-search::before { content: "\f002"; }
+.fa-shield-alt::before { content: "\f132"; }
+.fa-palette::before { content: "\f1fc"; }
+.fa-rocket::before { content: "\f135"; }
+.fa-lock::before { content: "\f023"; }
+.fa-wrench::before { content: "\f0ad"; }
+.fa-brain::before { content: "\f19d"; }
+.fa-robot::before { content: "\f135"; }
+.fa-facebook-f::before { content: "\f09a"; }
+.fa-instagram::before { content: "\f16d"; }
+.fa-linkedin-in::before { content: "\f0e1"; }
+.fa-whatsapp::before { content: "\f232"; }
+.fa-tiktok::before { content: "\f16a"; }
+
+.section-title { text-align: inherit; }
+.footer { padding: clamp(2.4rem, 5vw, 3.5rem) var(--page-gutter, 5%); }
+.footer-brand-name { margin-bottom: .45rem; }
+.footer-tagline { margin-bottom: .7rem; letter-spacing: .14em; }
+.footer-copy { margin: 0; }
+.footer-brand { min-width: 0; }
+
+/* Compact, single-column services dropdown; the small bridge prevents hover gaps. */
+.nav-dropdown-menu {
+  width: 260px;
+  grid-template-columns: 1fr !important;
+  gap: 2px;
+  padding: 8px;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translate(-50%, 8px);
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  transform: translate(-50%, 0);
+}
+.nav-dropdown::after {
+  content: "";
+  position: absolute;
+  left: -18px;
+  right: -18px;
+  top: 100%;
+  height: 10px;
+}
+.nav-dropdown-item { font-size: .72rem; padding: 8px 10px; min-height: 34px; }
+.nav-dropdown-item:hover,
+.nav-dropdown-item:focus-visible { background: var(--gold-pale); color: var(--navy); }
+
+/* Center the process/testimonial intros explicitly on all browsers. */
+#process .text-center,
+#testimonials .text-center,
+#process .section-title,
+#testimonials .section-title,
+#process .section-desc,
+#testimonials .section-desc { text-align: center; margin-left: auto; margin-right: auto; }
+
+@media (max-width: 900px) {
+  .nav-dropdown::after { display: none; }
+  .nav-dropdown-menu {
+    width: 100%;
+    left: 0;
+    transform: none !important;
+    top: auto;
+    grid-template-columns: 1fr !important;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu { opacity: 0; pointer-events: none; }
+  .nav-dropdown:focus-within .nav-dropdown-menu,
+  .nav-dropdown.mobile-open .nav-dropdown-menu { opacity: 1; pointer-events: auto; display: grid; }
+  .footer-content { align-items: start; }
 }

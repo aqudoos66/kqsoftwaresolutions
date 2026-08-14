@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,13 +7,12 @@
   <meta name="description" content="Read the latest articles, tutorials, and insights from the KQ Software Solutions team on software development, AI, research writing, and digital marketing." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://kqsoftwaresolution.vercel.app/blog/" />
-  <link rel="icon" href="../assets/images/favicon.ico" />
+  <link rel="icon" href="../assets/images/kq-logo.webp" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/pages.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <style>
+<style>
     .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.8rem; margin-top: 2.5rem; }
     .blog-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
     .blog-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 16px 40px rgba(0,0,0,0.22); }
@@ -46,6 +45,7 @@
     .article-author-info { font-size: 0.82rem; color: var(--text-muted); }
     .article-author-info strong { display: block; color: var(--white); font-size: 0.9rem; }
   </style>
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
 </head>
 <body>
 
@@ -145,7 +145,7 @@
 
       <!-- Article 4 -->
       <div class="blog-card">
-        <div class="blog-card-banner" style="background: linear-gradient(90deg, #1a3a6e, #28a745);"></div>
+        <div class="blog-card-banner" style="background: linear-gradient(90deg, var(--navy-light), var(--gold));"></div>
         <div class="blog-card-body">
           <div class="blog-meta">
             <span class="blog-tag">Digital Marketing</span>
@@ -232,7 +232,45 @@
 </section>
 
 <footer class="footer">
-  <p>&copy; 2025 <a href="../index.html">KQ Software Solutions</a>. All rights reserved. | <a href="mailto:kqsoftwaresolutions@gmail.com">kqsoftwaresolutions@gmail.com</a></p>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-brand-name"><span>KQ</span> Software Solutions</div>
+      <p class="footer-tagline">Software • AI • Web • Research Solutions</p>
+      <p class="footer-copy">© 2026 KQ Software Solutions. All rights reserved.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="../index.html#about">About Us</a></li>
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../team/index.html">Team</a></li>
+        <li><a href="../portfolio/index.html">Portfolio</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="../services/web-development.html">Web Development</a></li>
+        <li><a href="../services/software-development.html">Software Development</a></li>
+        <li><a href="../services/ai-development.html">AI &amp; Agentic AI</a></li>
+        <li><a href="../services/mobile-app-development.html">Mobile Apps</a></li>
+        <li><a href="../services/ecommerce.html">E-Commerce</a></li>
+        <li><a href="../services/research-writing.html">Research Writing</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Follow Us</div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61590637853625" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/kqsoftwaresolutions/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@kqsoftwaresolutions" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.linkedin.com/company/kqsoftwaresolutions/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/923053956628" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
 </footer>
 <script src="../assets/js/script.js?v=2" defer></script>
 </body>
